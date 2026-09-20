@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Face Recognition-Based Secure Attendance System</title>
+    <title>Face Recognition-Based Secure Attendance System | Zaki Shaikh</title>
 
     <meta name="description"
           content="A Python-based secure attendance system using face recognition, OpenCV, LBPH and Tkinter to automate attendance and reduce proxy attendance.">
 
     <meta name="author" content="Zaki Shaikh">
 
-    <!-- Open Graph / LinkedIn Preview -->
+
+    <!-- ==============================
+         LINKEDIN / SOCIAL MEDIA PREVIEW
+         ============================== -->
+
     <meta property="og:title"
           content="Face Recognition-Based Secure Attendance System">
 
     <meta property="og:description"
           content="Python-based attendance system using OpenCV, LBPH face recognition and Tkinter with cybersecurity-focused attendance controls.">
 
-    <meta property="og:type" content="website">
+    <meta property="og:type"
+          content="website">
 
     <meta property="og:url"
           content="https://zakishaikh.github.io/Face-detection-with-attendance-system/">
 
-    <!-- Project screenshot used as preview image -->
     <meta property="og:image"
           content="https://zakishaikh.github.io/Face-detection-with-attendance-system/image.png">
 
     <meta property="og:image:alt"
-          content="Face Recognition Attendance System">
+          content="Face Recognition-Based Secure Attendance System">
 
-    <!-- Twitter / social preview -->
-    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Twitter -->
+
+    <meta name="twitter:card"
+          content="summary_large_image">
 
     <meta name="twitter:title"
           content="Face Recognition-Based Secure Attendance System">
@@ -43,443 +52,1534 @@
     <meta name="twitter:image"
           content="https://zakishaikh.github.io/Face-detection-with-attendance-system/image.png">
 
+
+    <!-- ==============================
+         STYLES
+         ============================== -->
+
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             line-height: 1.6;
-            background: #f5f7fa;
-            color: #222;
-        }
 
-        header {
-            background: linear-gradient(135deg, #111827, #1f2937);
-            color: white;
-            padding: 70px 20px;
-            text-align: center;
-        }
+            background: #f4f7fb;
 
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        header p {
-            max-width: 800px;
-            margin: auto;
-            font-size: 18px;
-            color: #d1d5db;
-        }
-
-        .buttons {
-            margin-top: 25px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 12px 22px;
-            margin: 5px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            background: white;
-            color: #111827;
-        }
-
-        .button:hover {
-            opacity: 0.85;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        section {
-            background: white;
-            margin: 30px 0;
-            padding: 35px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            color: #111827;
-        }
-
-        h3 {
-            margin: 25px 0 10px;
             color: #1f2937;
         }
 
-        ul {
-            padding-left: 25px;
+
+        /* ==============================
+           HERO
+           ============================== */
+
+        .hero {
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(37, 99, 235, 0.25),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #06162e,
+                    #0b2d55,
+                    #061529
+                );
+
+            color: white;
+
+            padding: 65px 20px;
+
+            position: relative;
+
+            overflow: hidden;
         }
 
-        li {
-            margin-bottom: 10px;
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border: 1px solid rgba(96, 165, 250, 0.12);
+
+            border-radius: 50%;
+
+            right: -180px;
+            top: -200px;
         }
 
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border: 1px solid rgba(96, 165, 250, 0.08);
+
+            border-radius: 50%;
+
+            right: 20px;
+            bottom: -250px;
         }
 
-        .tech {
-            background: #f3f4f6;
-            padding: 18px;
-            border-radius: 8px;
+
+        .hero-container {
+
+            width: 90%;
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 60px;
+
+            position: relative;
+
+            z-index: 2;
         }
 
-        .tech strong {
+
+        /* ==============================
+           HERO CONTENT
+           ============================== */
+
+        .hero-content {
+
+            max-width: 700px;
+        }
+
+
+        .badge {
+
+            display: inline-block;
+
+            background: rgba(59, 130, 246, 0.15);
+
+            border: 1px solid rgba(96, 165, 250, 0.4);
+
+            color: #93c5fd;
+
+            padding: 7px 15px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+
+            font-size: 45px;
+
+            line-height: 1.15;
+
+            margin-bottom: 20px;
+
+            color: white;
+        }
+
+
+        .hero h1 span {
+
             display: block;
+
+            color: #60a5fa;
+        }
+
+
+        .hero-description {
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color: #dbeafe;
+
+            max-width: 650px;
+        }
+
+
+        /* ==============================
+           BUTTONS
+           ============================== */
+
+        .buttons {
+
+            margin-top: 28px;
+        }
+
+
+        .button {
+
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            margin-right: 10px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.25s;
+
+            cursor: pointer;
+        }
+
+
+        .github-button {
+
+            background: #2563eb;
+
+            color: white;
+
+            border: 1px solid #2563eb;
+        }
+
+
+        .github-button:hover {
+
+            background: #1d4ed8;
+
+            transform: translateY(-2px);
+        }
+
+
+        .outline-button {
+
+            border: 1px solid #60a5fa;
+
+            color: #dbeafe;
+
+            background: transparent;
+        }
+
+
+        .outline-button:hover {
+
+            background: rgba(96, 165, 250, 0.12);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ==============================
+           TECHNOLOGY TAGS
+           ============================== */
+
+        .tech-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 28px;
+        }
+
+
+        .tech-tags span {
+
+            background: rgba(255,255,255,0.08);
+
+            border: 1px solid rgba(255,255,255,0.13);
+
+            padding: 8px 13px;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+
+            color: #dbeafe;
+        }
+
+
+        /* ==============================
+           PROFILE
+           ============================== */
+
+        .profile {
+
+            min-width: 270px;
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .profile-image {
+
+            width: 195px;
+
+            height: 195px;
+
+            margin: auto;
+
+            border-radius: 50%;
+
+            padding: 5px;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 4px rgba(96, 165, 250, 0.25),
+                0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+
+        .profile-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            display: block;
+        }
+
+
+        .profile h2 {
+
+            color: white;
+
+            font-size: 28px;
+
+            margin-top: 18px;
+
             margin-bottom: 5px;
         }
 
-        .security {
-            border-left: 5px solid #374151;
+
+        .profile a {
+
+            color: #bfdbfe;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            word-break: break-word;
         }
 
-        .screenshots {
+
+        .profile a:hover {
+
+            color: white;
+
+            text-decoration: underline;
+        }
+
+
+        /* ==============================
+           MAIN CONTAINER
+           ============================== */
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        /* ==============================
+           SECTIONS
+           ============================== */
+
+        section {
+
+            background: white;
+
+            margin: 30px 0;
+
+            padding: 35px;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 5px 25px rgba(15, 23, 42, 0.08);
+
+            border: 1px solid #e5e7eb;
+        }
+
+
+        h2 {
+
+            margin-bottom: 20px;
+
+            color: #0f2d5c;
+
+            font-size: 28px;
+        }
+
+
+        h3 {
+
+            margin: 25px 0 10px;
+
+            color: #1f2937;
+        }
+
+
+        p {
+
+            margin-bottom: 15px;
+        }
+
+
+        ul {
+
+            padding-left: 25px;
+        }
+
+
+        li {
+
+            margin-bottom: 10px;
+        }
+
+
+        /* ==============================
+           ABOUT
+           ============================== */
+
+        .about-grid {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(300px, 1fr)
+                );
+
+            gap: 25px;
+
+            align-items: stretch;
+        }
+
+
+        /* ==============================
+           CYBERSECURITY
+           ============================== */
+
+        .security {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff8ff,
+                    #f5f9ff
+                );
+
+            border-left: 5px solid #2563eb;
+        }
+
+
+        .security-list {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin-top: 20px;
+        }
+
+
+        .security-list li {
+
+            padding: 8px 0 8px 30px;
+
+            position: relative;
+        }
+
+
+        .security-list li::before {
+
+            content: "✓";
+
+            position: absolute;
+
+            left: 0;
+
+            color: #16a34a;
+
+            font-weight: bold;
+
+            font-size: 18px;
+        }
+
+
+        /* ==============================
+           TECHNOLOGIES
+           ============================== */
+
+        .tech-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(200px, 1fr)
+                );
+
+            gap: 15px;
+        }
+
+
+        .tech {
+
+            background: #f7f9fc;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            border: 1px solid #e5e7eb;
+
+            transition: 0.25s;
+        }
+
+
+        .tech:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.08);
+
+            border-color: #bfdbfe;
+        }
+
+
+        .tech strong {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: #123b73;
+
+            font-size: 17px;
+        }
+
+
+        .tech small {
+
+            color: #6b7280;
+        }
+
+
+        /* ==============================
+           FEATURE LIST
+           ============================== */
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(250px, 1fr)
+                );
+
+            gap: 15px;
+
+            list-style: none;
+
+            padding: 0;
+        }
+
+
+        .feature-card {
+
+            padding: 18px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 10px;
+
+            font-weight: 500;
+        }
+
+
+        .feature-card::before {
+
+            content: "✓";
+
+            color: #2563eb;
+
+            font-weight: bold;
+
+            margin-right: 9px;
+        }
+
+
+        /* ==============================
+           SCREENSHOTS
+           ============================== */
+
+        .screenshots {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
+
             gap: 25px;
         }
 
+
         .screenshot {
+
             background: #f9fafb;
+
             padding: 15px;
-            border-radius: 8px;
+
+            border-radius: 10px;
+
+            border: 1px solid #e5e7eb;
+
+            transition: 0.25s;
         }
+
+
+        .screenshot:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.1);
+        }
+
 
         .screenshot img {
+
             width: 100%;
+
             height: auto;
+
             display: block;
-            border-radius: 6px;
+
+            border-radius: 7px;
+
+            border: 1px solid #dbe3ee;
         }
+
 
         .screenshot p {
+
             text-align: center;
+
             font-weight: bold;
+
             margin-top: 12px;
+
+            margin-bottom: 0;
+
+            color: #123b73;
         }
 
-        footer {
+
+        /* ==============================
+           FUTURE SECURITY
+           ============================== */
+
+        .future {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f5f7ff,
+                    #eef4ff
+                );
+
+            border-left: 5px solid #6366f1;
+        }
+
+
+        .future-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
+
+            gap: 10px 40px;
+        }
+
+
+        .future-grid li {
+
+            color: #374151;
+        }
+
+
+        /* ==============================
+           GITHUB SECTION
+           ============================== */
+
+        .github-section {
+
             text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b2d55,
+                    #071a33
+                );
+
+            color: white;
+        }
+
+
+        .github-section h2 {
+
+            color: white;
+        }
+
+
+        .github-section p {
+
+            color: #dbeafe;
+        }
+
+
+        .github-section .button {
+
+            background: #2563eb;
+
+            color: white;
+
+            border: none;
+
+            margin-top: 10px;
+        }
+
+
+        /* ==============================
+           FOOTER
+           ============================== */
+
+        footer {
+
+            text-align: center;
+
             padding: 35px 20px;
-            background: #111827;
-            color: #d1d5db;
+
+            background: #061529;
+
+            color: #cbd5e1;
+
             margin-top: 40px;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 30px;
+
+        footer strong {
+
+            color: white;
+        }
+
+
+        footer a {
+
+            color: #93c5fd;
+
+            text-decoration: none;
+        }
+
+
+        /* ==============================
+           MOBILE
+           ============================== */
+
+        @media (max-width: 800px) {
+
+            .hero {
+
+                padding: 50px 20px;
             }
 
+
+            .hero-container {
+
+                flex-direction: column-reverse;
+
+                text-align: center;
+
+                gap: 35px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 34px;
+            }
+
+
+            .hero-description {
+
+                margin: auto;
+
+                font-size: 16px;
+            }
+
+
+            .tech-tags {
+
+                justify-content: center;
+            }
+
+
+            .profile {
+
+                min-width: auto;
+
+                width: 100%;
+            }
+
+
+            .profile-image {
+
+                width: 165px;
+
+                height: 165px;
+            }
+
+
             section {
+
                 padding: 25px 20px;
             }
+
+
+            h2 {
+
+                font-size: 24px;
+            }
+
+
+            .button {
+
+                margin: 5px;
+
+                padding: 11px 17px;
+            }
+
         }
+
+
+        @media (max-width: 450px) {
+
+            .hero h1 {
+
+                font-size: 29px;
+            }
+
+
+            .badge {
+
+                font-size: 11px;
+            }
+
+
+            .profile-image {
+
+                width: 145px;
+
+                height: 145px;
+            }
+
+
+            .profile h2 {
+
+                font-size: 24px;
+            }
+
+
+            .profile a {
+
+                font-size: 13px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-<header>
-    <div class="container">
 
-        <h1>Face Recognition-Based Secure Attendance System</h1>
+<!-- =========================================
+     HERO SECTION
+     ========================================= -->
 
-        <p>
-            A Python-based attendance system that uses face recognition,
-            OpenCV and Tkinter to automate attendance management and
-            reduce the risk of proxy attendance.
-        </p>
+<header class="hero">
 
-        <div class="buttons">
+    <div class="hero-container">
 
-            <a class="button"
-               href="https://github.com/Zakishaikh/Face-detection-with-attendance-system"
-               target="_blank">
-                View on GitHub
-            </a>
 
-            <a class="button"
-               href="#screenshots">
-                View Screenshots
+        <!-- LEFT -->
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🔐 CYBERSECURITY PROJECT
+            </div>
+
+
+            <h1>
+
+                Face Recognition-Based
+
+                <span>
+                    Secure Attendance System
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                A Python-based attendance system that uses
+                face recognition, OpenCV and Tkinter to
+                automate attendance management, verify
+                identity and reduce the risk of proxy attendance.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a
+                    class="button github-button"
+                    href="https://github.com/Zakishaikh/Face-detection-with-attendance-system"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    View on GitHub
+
+                </a>
+
+
+                <a
+                    class="button outline-button"
+                    href="#screenshots">
+
+                    View Screenshots
+
+                </a>
+
+            </div>
+
+
+            <div class="tech-tags">
+
+                <span>🐍 Python</span>
+
+                <span>🖥️ Tkinter</span>
+
+                <span>👁️ OpenCV</span>
+
+                <span>🛡️ Cybersecurity</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT PROFILE -->
+
+        <div class="profile">
+
+            <div class="profile-image">
+
+                <img
+                    src="profile.png"
+                    alt="Zaki Shaikh">
+
+            </div>
+
+
+            <h2>
+                Zaki Shaikh
+            </h2>
+
+
+            <a
+                href="mailto:shaikh.zaki2000@gmail.com">
+
+                ✉ shaikh.zaki2000@gmail.com
+
             </a>
 
         </div>
 
+
     </div>
+
 </header>
 
 
+
+<!-- =========================================
+     MAIN CONTENT
+     ========================================= -->
+
 <main class="container">
 
+
     <!-- ABOUT -->
+
     <section>
 
-        <h2>About the Project</h2>
+        <h2>
+            About the Project
+        </h2>
+
 
         <p>
-            This project is a Python-based attendance management system
-            that uses facial recognition to identify registered users
-            and automatically record their attendance.
+
+            This project is a Python-based attendance
+            management system that uses facial recognition
+            to identify registered users and automatically
+            record their attendance.
+
         </p>
 
+
         <p>
-            The system provides a graphical user interface using Tkinter
-            and uses OpenCV with the LBPH face recognition algorithm for
-            face-based identification.
+
+            The system provides a graphical user interface
+            using Tkinter and uses OpenCV with the LBPH
+            face recognition algorithm for face-based
+            identification.
+
         </p>
 
     </section>
+
 
 
     <!-- CYBERSECURITY -->
+
     <section class="security">
 
-        <h2>Cybersecurity Focus</h2>
+        <h2>
+            🛡️ Cybersecurity Focus
+        </h2>
+
 
         <p>
-            The system is designed with security-focused attendance
-            controls to reduce common attendance-related risks.
+
+            The system is designed with security-focused
+            attendance controls to reduce common
+            attendance-related risks.
+
         </p>
 
-        <ul>
+
+        <ul class="security-list">
+
 
             <li>
-                <strong>Proxy Attendance:</strong>
-                Face recognition verifies the registered person before
-                attendance is recorded.
+
+                <strong>
+                    Proxy Attendance:
+                </strong>
+
+                Face recognition verifies the registered
+                person before attendance is recorded.
+
             </li>
 
-            <li>
-                <strong>Unauthorized Registration:</strong>
-                New-person registration requires password authentication.
-            </li>
 
             <li>
-                <strong>Identity Impersonation:</strong>
-                Attendance is associated with the registered facial identity.
+
+                <strong>
+                    Unauthorized Registration:
+                </strong>
+
+                New-person registration requires
+                password authentication.
+
             </li>
 
-            <li>
-                <strong>Record Tracking:</strong>
-                Attendance is automatically stored with ID, name, date
-                and time.
-            </li>
 
             <li>
-                <strong>Auditability:</strong>
-                Attendance records can be reviewed for verification.
+
+                <strong>
+                    Identity Impersonation:
+                </strong>
+
+                Attendance is associated with the
+                registered facial identity.
+
             </li>
+
+
+            <li>
+
+                <strong>
+                    Record Tracking:
+                </strong>
+
+                Attendance is automatically stored
+                with ID, name, date and time.
+
+            </li>
+
+
+            <li>
+
+                <strong>
+                    Auditability:
+                </strong>
+
+                Attendance records can be reviewed
+                for verification.
+
+            </li>
+
 
         </ul>
 
     </section>
+
 
 
     <!-- TECHNOLOGIES -->
+
     <section>
 
-        <h2>Technologies Used</h2>
+        <h2>
+            💻 Technologies Used
+        </h2>
+
 
         <div class="tech-grid">
 
-            <div class="tech">
-                <strong>Python</strong>
-                Core programming language.
-            </div>
 
             <div class="tech">
-                <strong>Tkinter</strong>
-                Graphical user interface.
+
+                <strong>
+                    🐍 Python
+                </strong>
+
+                <small>
+                    Core programming language.
+                </small>
+
             </div>
 
-            <div class="tech">
-                <strong>OpenCV</strong>
-                Image processing and face recognition.
-            </div>
 
             <div class="tech">
-                <strong>LBPH</strong>
-                Local Binary Pattern Histogram face recognition.
+
+                <strong>
+                    🖥️ Tkinter
+                </strong>
+
+                <small>
+                    Graphical user interface.
+                </small>
+
             </div>
 
-            <div class="tech">
-                <strong>NumPy</strong>
-                Numerical and image data processing.
-            </div>
 
             <div class="tech">
-                <strong>Pandas</strong>
-                Attendance data management.
+
+                <strong>
+                    👁️ OpenCV
+                </strong>
+
+                <small>
+                    Image processing and face recognition.
+                </small>
+
             </div>
 
-            <div class="tech">
-                <strong>CSV</strong>
-                Attendance and student record storage.
-            </div>
 
             <div class="tech">
-                <strong>Datetime</strong>
-                Attendance date and time tracking.
+
+                <strong>
+                    🔍 LBPH
+                </strong>
+
+                <small>
+                    Face recognition algorithm.
+                </small>
+
             </div>
+
+
+            <div class="tech">
+
+                <strong>
+                    🔢 NumPy
+                </strong>
+
+                <small>
+                    Numerical and image data processing.
+                </small>
+
+            </div>
+
+
+            <div class="tech">
+
+                <strong>
+                    📊 Pandas
+                </strong>
+
+                <small>
+                    Attendance data management.
+                </small>
+
+            </div>
+
+
+            <div class="tech">
+
+                <strong>
+                    📄 CSV
+                </strong>
+
+                <small>
+                    Attendance and student record storage.
+                </small>
+
+            </div>
+
+
+            <div class="tech">
+
+                <strong>
+                    🕐 Datetime
+                </strong>
+
+                <small>
+                    Attendance date and time tracking.
+                </small>
+
+            </div>
+
 
         </div>
 
     </section>
+
 
 
     <!-- FEATURES -->
+
     <section>
 
-        <h2>Security Features</h2>
-
-        <ul>
-
-            <li>Face-based identity verification</li>
-
-            <li>Password-protected user registration</li>
-
-            <li>Automated attendance logging</li>
-
-            <li>Daily attendance records</li>
-
-            <li>Date and time tracking</li>
-
-            <li>Reduced risk of proxy attendance</li>
-
-        </ul>
-
-    </section>
+        <h2>
+            ⚙️ Security Features
+        </h2>
 
 
-    <!-- SCREENSHOTS -->
-    <section id="screenshots">
+        <div class="feature-grid">
 
-        <h2>Project Screenshots</h2>
 
-        <div class="screenshots">
-
-            <div class="screenshot">
-
-                <img src="image.png"
-                     alt="Main screen of Face Recognition Attendance System">
-
-                <p>Main Screen</p>
-
+            <div class="feature-card">
+                Face-based identity verification
             </div>
 
 
-            <div class="screenshot">
-
-                <img src="myimage.png"
-                     alt="Face recognition attendance screen">
-
-                <p>Taking Attendance</p>
-
+            <div class="feature-card">
+                Password-protected user registration
             </div>
 
 
-            <div class="screenshot">
-
-                <img src="main-form.jpeg"
-                     alt="Attendance records screen">
-
-                <p>Attendance Records</p>
-
+            <div class="feature-card">
+                Automated attendance logging
             </div>
 
 
-            <div class="screenshot">
-
-                <img src="help.png"
-                     alt="Help option in attendance system">
-
-                <p>Help Option</p>
-
+            <div class="feature-card">
+                Daily attendance records
             </div>
+
+
+            <div class="feature-card">
+                Date and time tracking
+            </div>
+
+
+            <div class="feature-card">
+                Reduced risk of proxy attendance
+            </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- FUTURE -->
-    <section>
 
-        <h2>Future Security Enhancements</h2>
+    <!-- SCREENSHOTS -->
 
-        <ul>
+    <section id="screenshots">
 
-            <li>Liveness detection to help prevent photo/video spoofing</li>
+        <h2>
+            📸 Project Screenshots
+        </h2>
 
-            <li>Encrypted data storage</li>
 
-            <li>Secure database instead of CSV storage</li>
+        <div class="screenshots">
 
-            <li>Password hashing</li>
 
-            <li>File-integrity monitoring</li>
+            <div class="screenshot">
 
-            <li>Security event logging</li>
+                <img
+                    src="image.png"
+                    alt="Main screen of Face Recognition Attendance System">
 
-        </ul>
+                <p>
+                    Main Screen
+                </p>
+
+            </div>
+
+
+            <div class="screenshot">
+
+                <img
+                    src="myimage.png"
+                    alt="Face recognition attendance screen">
+
+                <p>
+                    Taking Attendance
+                </p>
+
+            </div>
+
+
+            <div class="screenshot">
+
+                <img
+                    src="main-form.jpeg"
+                    alt="Attendance records screen">
+
+                <p>
+                    Attendance Records
+                </p>
+
+            </div>
+
+
+            <div class="screenshot">
+
+                <img
+                    src="help.png"
+                    alt="Help option in attendance system">
+
+                <p>
+                    Help Option
+                </p>
+
+            </div>
+
+
+        </div>
 
     </section>
 
 
-    <!-- PROJECT -->
-    <section>
 
-        <h2>Project Repository</h2>
+    <!-- FUTURE SECURITY -->
+
+    <section class="future">
+
+        <h2>
+            🔐 Future Security Enhancements
+        </h2>
+
 
         <p>
-            View the complete source code, documentation and project
-            files on GitHub.
+
+            The project can be further improved with
+            additional security mechanisms such as:
+
         </p>
 
-        <br>
 
-        <a class="button"
-           href="https://github.com/Zakishaikh/Face-detection-with-attendance-system"
-           target="_blank">
-            GitHub Repository
+        <div class="future-grid">
+
+            <ul>
+
+                <li>
+                    Liveness detection to help prevent
+                    photo/video spoofing
+                </li>
+
+                <li>
+                    Encrypted data storage
+                </li>
+
+                <li>
+                    Secure database instead of CSV
+                </li>
+
+            </ul>
+
+
+            <ul>
+
+                <li>
+                    Password hashing
+                </li>
+
+                <li>
+                    File-integrity monitoring
+                </li>
+
+                <li>
+                    Security event logging
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- GITHUB -->
+
+    <section class="github-section">
+
+        <h2>
+            🚀 Project Repository
+        </h2>
+
+
+        <p>
+
+            View the complete source code,
+            documentation and project files on GitHub.
+
+        </p>
+
+
+        <a
+            class="button"
+            href="https://github.com/Zakishaikh/Face-detection-with-attendance-system"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            View Full Project on GitHub
+
         </a>
 
     </section>
 
+
 </main>
 
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
 
 <footer>
 
     <p>
-        Face Recognition-Based Secure Attendance System
+
+        <strong>
+            Face Recognition-Based Secure Attendance System
+        </strong>
+
     </p>
 
+
     <p>
+
         Developed by Zaki Shaikh
+
+    </p>
+
+
+    <p>
+
+        <a href="mailto:shaikh.zaki2000@gmail.com">
+
+            shaikh.zaki2000@gmail.com
+
+        </a>
+
     </p>
 
 </footer>
 
+
 </body>
+
 </html>
