@@ -1,19 +1,40 @@
-# Face_recognition_based_attendance_system_to_avoid_vulnerable_attendance
-A python GUI integrated attendance system using face recognition to take attendance.
+# Face Recognition-Based Secure Attendance System
 
-In this python project, I have made an attendance system which takes attendance by using face recognition technique. I have also intergrated it with GUI (Graphical user interface) so it can be easy to use by anyone. GUI for this project is also made on python using tkinter.
+A Python-based attendance system that uses face recognition and a GUI to provide secure and automated attendance management.
 
-TECHNOLOGY USED:
-1) tkinter for whole GUI
-2) OpenCV for taking images and face recognition (cv2.face.LBPHFaceRecognizer_create())
-3) CSV, Numpy, Pandas, datetime etc. for other purposes.
+## CYBERSECURITY FOCUS
 
-FEATURES:
-1) Easy to use with interactive GUI support.
-2) Password protection for new person registration.
-3) Creates/Updates CSV file for deatils of students on registration.
-4) Creates a new CSV file everyday for attendance and marks attendance with proper date and time.
-5) Displays live attendance updates for the day on the main screen in tabular format with Id, name, date and time.
+The system helps protect against common attendance-related threats such as:
+
+- **Proxy Attendance** – Face recognition verifies the person before marking attendance.
+- **Unauthorized Registration** – New users require password authentication.
+- **Identity Impersonation** – Attendance is linked to the registered face.
+- **Record Tracking** – Attendance is automatically stored with ID, name, date, and time.
+- **Auditability** – Daily attendance records can be reviewed for verification.
+
+## TECHNOLOGY USED
+
+1. **Python & Tkinter** – GUI
+2. **OpenCV & LBPH** – Face detection and recognition
+3. **CSV, NumPy & Pandas** – Data and attendance management
+4. **Datetime** – Attendance timestamps
+
+## SECURITY FEATURES
+
+- Face-based identity verification
+- Password-protected registration
+- Automated attendance logging
+- Daily attendance records
+- Reduced risk of proxy attendance
+
+## FUTURE SECURITY ENHANCEMENTS
+
+- Liveness detection to prevent photo/video spoofing
+- Encrypted storage
+- Secure database instead of CSV
+- Password hashing
+- File-integrity monitoring
+- Security event logging
 
 ### For more information:
 
@@ -23,7 +44,7 @@ https://machinelearningprojects.net/how-to-perform-face-recognition-using-knn/
 
 MAIN SCREEN:
 
-![Screenshot (9)](image.png)
+![Screenshot (11)](main-form.jpeg)
 
 TAKING ATTENDANCE:
 
@@ -31,7 +52,7 @@ TAKING ATTENDANCE:
 
 SHOWING ATTENDANCE TAKEN:
 
-![Screenshot (11)](main-form.jpeg)
+![Screenshot (9)](image.png)
 
 HELP OPTION IN MENUBAR:
 
