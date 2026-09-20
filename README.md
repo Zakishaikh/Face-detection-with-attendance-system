@@ -20,7 +20,7 @@ https://machinelearningprojects.net/how-to-perform-face-recognition-using-knn/
 
 # SCREENSHOTS
 MAIN SCREEN:
-![Screenshot (9)](https://user-images.githubusercontent.com/37211676/58502148-97ec2a00-81a3-11e9-963e-674b9c3e05dc.png)
+![Screenshot (9)](https://github.com/Zakishaikh/Face-detection-with-attendance-system/blob/main/image.png)
 
 TAKING ATTENDANCE:
 ![Screenshot (10)](https://github.com/Zakishaikh/Face-detection-with-attendance-system/blob/main/myimage.png)
