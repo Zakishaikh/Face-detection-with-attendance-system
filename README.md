@@ -16,19 +16,25 @@ FEATURES:
 5) Displays live attendance updates for the day on the main screen in tabular format with Id, name, date and time.
 
 ### For more information:
+
 https://machinelearningprojects.net/how-to-perform-face-recognition-using-knn/
 
 # SCREENSHOTS
+
 MAIN SCREEN:
-![Screenshot (9)](https://github.com/Zakishaikh/Face-detection-with-attendance-system/blob/main/image.png)
+
+![Screenshot (9)](image.png)
 
 TAKING ATTENDANCE:
-![Screenshot (10)](https://github.com/Zakishaikh/Face-detection-with-attendance-system/blob/main/myimage.png)
+
+![Screenshot (10)](myimage.png)
 
 SHOWING ATTENDANCE TAKEN:
-![Screenshot (11)](https://github.com/Zakishaikh/Face-detection-with-attendance-system/blob/main/main-form.jpeg)
+
+![Screenshot (11)](main-form.jpeg)
 
 HELP OPTION IN MENUBAR:
-![Screenshot (12)](https://github.com/Zakishaikh/Face-detection-with-attendance-system/blob/main/help.png)
+
+![Screenshot (12)](help.png)
 
 Thank You for Trusting our Attendance system to avoid any vulnerable person to enter the class!
