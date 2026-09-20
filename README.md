@@ -26,7 +26,7 @@ TAKING ATTENDANCE:
 ![Screenshot (10)](https://github.com/Zakishaikh/Face-detection-with-attendance-system/blob/main/myimage.png)
 
 SHOWING ATTENDANCE TAKEN:
-![Screenshot (11)](https://user-images.githubusercontent.com/37211676/58502151-9884c080-81a3-11e9-9a90-fec29940ee5a.png)
+![Screenshot (11)](https://github.com/Zakishaikh/Face-detection-with-attendance-system/blob/main/main-form.jpeg)
 
 HELP OPTION IN MENUBAR:
 ![Screenshot (12)](https://user-images.githubusercontent.com/37211676/58502152-991d5700-81a3-11e9-861a-9115526010c2.png)
