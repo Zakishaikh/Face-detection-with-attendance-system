@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Face Recognition-Based Secure Attendance System</title>
+
+    <meta name="description"
+          content="A Python-based secure attendance system using face recognition, OpenCV, LBPH and Tkinter to automate attendance and reduce proxy attendance.">
+
+    <meta name="author" content="Zaki Shaikh">
+
+    <!-- Open Graph / LinkedIn Preview -->
+    <meta property="og:title"
+          content="Face Recognition-Based Secure Attendance System">
+
+    <meta property="og:description"
+          content="Python-based attendance system using OpenCV, LBPH face recognition and Tkinter with cybersecurity-focused attendance controls.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url"
+          content="https://zakishaikh.github.io/Face-detection-with-attendance-system/">
+
+    <!-- Project screenshot used as preview image -->
+    <meta property="og:image"
+          content="https://zakishaikh.github.io/Face-detection-with-attendance-system/image.png">
+
+    <meta property="og:image:alt"
+          content="Face Recognition Attendance System">
+
+    <!-- Twitter / social preview -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="Face Recognition-Based Secure Attendance System">
+
+    <meta name="twitter:description"
+          content="Python-based secure attendance system using face recognition, OpenCV and Tkinter.">
+
+    <meta name="twitter:image"
+          content="https://zakishaikh.github.io/Face-detection-with-attendance-system/image.png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #111827, #1f2937);
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+            color: #d1d5db;
+        }
+
+        .buttons {
+            margin-top: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            margin: 5px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            background: white;
+            color: #111827;
+        }
+
+        .button:hover {
+            opacity: 0.85;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        h3 {
+            margin: 25px 0 10px;
+            color: #1f2937;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .tech {
+            background: #f3f4f6;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .tech strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .security {
+            border-left: 5px solid #374151;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .screenshot {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .screenshot p {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #111827;
+            color: #d1d5db;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            section {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+
+        <h1>Face Recognition-Based Secure Attendance System</h1>
+
+        <p>
+            A Python-based attendance system that uses face recognition,
+            OpenCV and Tkinter to automate attendance management and
+            reduce the risk of proxy attendance.
+        </p>
+
+        <div class="buttons">
+
+            <a class="button"
+               href="https://github.com/Zakishaikh/Face-detection-with-attendance-system"
+               target="_blank">
+                View on GitHub
+            </a>
+
+            <a class="button"
+               href="#screenshots">
+                View Screenshots
+            </a>
+
+        </div>
+
+    </div>
+</header>
+
+
+<main class="container">
+
+    <!-- ABOUT -->
+    <section>
+
+        <h2>About the Project</h2>
+
+        <p>
+            This project is a Python-based attendance management system
+            that uses facial recognition to identify registered users
+            and automatically record their attendance.
+        </p>
+
+        <p>
+            The system provides a graphical user interface using Tkinter
+            and uses OpenCV with the LBPH face recognition algorithm for
+            face-based identification.
+        </p>
+
+    </section>
+
+
+    <!-- CYBERSECURITY -->
+    <section class="security">
+
+        <h2>Cybersecurity Focus</h2>
+
+        <p>
+            The system is designed with security-focused attendance
+            controls to reduce common attendance-related risks.
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>Proxy Attendance:</strong>
+                Face recognition verifies the registered person before
+                attendance is recorded.
+            </li>
+
+            <li>
+                <strong>Unauthorized Registration:</strong>
+                New-person registration requires password authentication.
+            </li>
+
+            <li>
+                <strong>Identity Impersonation:</strong>
+                Attendance is associated with the registered facial identity.
+            </li>
+
+            <li>
+                <strong>Record Tracking:</strong>
+                Attendance is automatically stored with ID, name, date
+                and time.
+            </li>
+
+            <li>
+                <strong>Auditability:</strong>
+                Attendance records can be reviewed for verification.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- TECHNOLOGIES -->
+    <section>
+
+        <h2>Technologies Used</h2>
+
+        <div class="tech-grid">
+
+            <div class="tech">
+                <strong>Python</strong>
+                Core programming language.
+            </div>
+
+            <div class="tech">
+                <strong>Tkinter</strong>
+                Graphical user interface.
+            </div>
+
+            <div class="tech">
+                <strong>OpenCV</strong>
+                Image processing and face recognition.
+            </div>
+
+            <div class="tech">
+                <strong>LBPH</strong>
+                Local Binary Pattern Histogram face recognition.
+            </div>
+
+            <div class="tech">
+                <strong>NumPy</strong>
+                Numerical and image data processing.
+            </div>
+
+            <div class="tech">
+                <strong>Pandas</strong>
+                Attendance data management.
+            </div>
+
+            <div class="tech">
+                <strong>CSV</strong>
+                Attendance and student record storage.
+            </div>
+
+            <div class="tech">
+                <strong>Datetime</strong>
+                Attendance date and time tracking.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section>
+
+        <h2>Security Features</h2>
+
+        <ul>
+
+            <li>Face-based identity verification</li>
+
+            <li>Password-protected user registration</li>
+
+            <li>Automated attendance logging</li>
+
+            <li>Daily attendance records</li>
+
+            <li>Date and time tracking</li>
+
+            <li>Reduced risk of proxy attendance</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- SCREENSHOTS -->
+    <section id="screenshots">
+
+        <h2>Project Screenshots</h2>
+
+        <div class="screenshots">
+
+            <div class="screenshot">
+
+                <img src="image.png"
+                     alt="Main screen of Face Recognition Attendance System">
+
+                <p>Main Screen</p>
+
+            </div>
+
+
+            <div class="screenshot">
+
+                <img src="myimage.png"
+                     alt="Face recognition attendance screen">
+
+                <p>Taking Attendance</p>
+
+            </div>
+
+
+            <div class="screenshot">
+
+                <img src="main-form.jpeg"
+                     alt="Attendance records screen">
+
+                <p>Attendance Records</p>
+
+            </div>
+
+
+            <div class="screenshot">
+
+                <img src="help.png"
+                     alt="Help option in attendance system">
+
+                <p>Help Option</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FUTURE -->
+    <section>
+
+        <h2>Future Security Enhancements</h2>
+
+        <ul>
+
+            <li>Liveness detection to help prevent photo/video spoofing</li>
+
+            <li>Encrypted data storage</li>
+
+            <li>Secure database instead of CSV storage</li>
+
+            <li>Password hashing</li>
+
+            <li>File-integrity monitoring</li>
+
+            <li>Security event logging</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- PROJECT -->
+    <section>
+
+        <h2>Project Repository</h2>
+
+        <p>
+            View the complete source code, documentation and project
+            files on GitHub.
+        </p>
+
+        <br>
+
+        <a class="button"
+           href="https://github.com/Zakishaikh/Face-detection-with-attendance-system"
+           target="_blank">
+            GitHub Repository
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        Face Recognition-Based Secure Attendance System
+    </p>
+
+    <p>
+        Developed by Zaki Shaikh
+    </p>
+
+</footer>
+
+</body>
+</html>
