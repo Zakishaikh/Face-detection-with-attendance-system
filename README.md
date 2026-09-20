@@ -58,4 +58,4 @@ HELP OPTION IN MENUBAR:
 
 ![Screenshot (12)](help.png)
 
-Thank You for Trusting our Attendance system to avoid any vulnerable person to enter the class!
+Thank You for Trusting our Attendance system to avoid any vulnerable person to enter the class!!
